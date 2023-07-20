@@ -2,11 +2,94 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="amp-consent-blocking" content="amp-iframe,amp-dailymotion">
     <title>amp-consent integration</title>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
   </head>
   <body>
-    
+    <!-- "onUpdateHref": "https://cdn-1212.lepoint.fr/wrapper/tcfv2/v1/amp-v2?authId=CLIENT_ID", -->
+    <amp-consent layout="nodisplay" id="consent" type="SourcePoint">
+      <placeholder hidden><svg viewBox="0 0 40 40"><defs><linearGradient id="grad"><stop stop-color="rgb(105, 105, 105)"></stop><stop offset="100%" stop-color="rgb(105, 105, 105)" stop-opacity="0"></stop></linearGradient></defs><path d="M11,4.4 A18,18, 0,1,0, 38,20" stroke="url(#grad)"></path></svg></placeholder>
+      <script type="application/json">
+        {
+            "consentRequired": "remote",
+            "consentInstanceId": "sourcepoint",
+            "consentStateValue": "null",
+            "checkConsentHref": "https://cdn-1212.lepoint.fr/wrapper/tcfv2/v1/amp-v2?authId=CLIENT_ID", 
+            "promptUISrc": "https://cdn-1212.lepoint.fr/amp/index.html?authId=CLIENT_ID",
+            "uiConfig": { "overlay": false },
+            "cookies": {
+                "enabled": true,
+                "AMP-CONSENT": {
+                    "value": "LINKER_PARAM(authId, _a)"
+                }
+            },
+            "clientConfig": {
+                "accountId": 1212,
+                "propertyHref": "https://amptcfv2.lepoint.fr",
+                "propertyId": 10156,
+                "mmsDomain": "https://cdn-1212.lepoint.fr",
+                "privacyManagerId": 172542,
+                "isTCFV2": true,
+                "pmTab": "purposes",
+                "stageCampaign": false,
+                "targetingParams": {
+                    "color": "red"
+                },
+                "gdprAppliesGlobally": true,
+                "config": {
+                    "app": {
+                        "name": "lePoint",
+                        "apiKey": ""
+                    }
+                }
+            },
+            "exposesTcfApi": true,
+            "policy": {
+                "default": {
+                    "waitFor": {
+                        "sourcepoint": []
+                    },
+                    "timeout": {
+                        "seconds": 0,
+                        "fallbackAction": "reject"
+                    }
+                }
+            }
+        }
+    </script>
+    <iframe name="__tcfapiLocator" aria-hidden="true" hidden></iframe>
+  </amp-consent>
+  <amp-dailymotion
+  data-videoid="x2m8jpp"
+  layout="responsive"
+  data-block-on-consent="_till_responded"
+  data-param-dmlogger="Infopack"
+  width="480"
+  height="270"
+  >
+  </amp-dailymotion>
+  <amp-iframe  
+    width="200" height="100"
+    sandbox="allow-scripts allow-same-origin allow-presentation"
+    layout="responsive"
+    data-block-on-consent="_till_responded"
+    src="https://player.local.dailymotion.com:9096/player/xq.html?video=x3rdtfy&dmLogger=Infopack&"
+  >
+    <div placeholder width="200" height="100"></div>
+  </amp-iframe>
+  <footer>
+  <script async custom-element="amp-consent" src="https://cdn.ampproject.org/v0/amp-consent-0.1.js"></script>
+  <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+  <script async custom-element="amp-dailymotion" src="https://cdn.ampproject.org/v0/amp-dailymotion-0.1.js"></script>
+  <script src="./main.js" type="module"></script>
+  <script>
+    function consentReady() {
+      console.log('ready')
+    }
+  </script>
+</footer>
+
   </body>
 </html>
