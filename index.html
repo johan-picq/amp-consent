@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="amp-consent-blocking" content="amp-iframe,amp-dailymotion">
+    <meta content="lepoint.fr" name="amp-cookie-scope">
     <title>amp-consent integration</title>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
   </head>
@@ -15,9 +16,9 @@
         {
             "consentRequired": "remote",
             "consentInstanceId": "sourcepoint",
-            "consentStateValue": "null",
-            "checkConsentHref": "https://cdn-1212.lepoint.fr/wrapper/tcfv2/v1/amp-v2?authId=CLIENT_ID", 
+            "checkConsentHref": "https://cdn-1212.lepoint.fr/wrapper/tcfv2/v1/amp-v2?authId=CLIENT_ID",
             "promptUISrc": "https://cdn-1212.lepoint.fr/amp/index.html?authId=CLIENT_ID",
+            "postPromptUI": "postPromptUI",
             "uiConfig": { "overlay": false },
             "cookies": {
                 "enabled": true,
@@ -33,15 +34,19 @@
                 "privacyManagerId": 172542,
                 "isTCFV2": true,
                 "pmTab": "purposes",
-                "stageCampaign": false,
+                "stageCampaign": true,
                 "targetingParams": {
                     "color": "red"
                 },
                 "gdprAppliesGlobally": true,
                 "config": {
-                    "app": {
-                        "name": "lePoint",
-                        "apiKey": ""
+                    "website": {
+                        "apiKey": "",
+                        "vendors": {
+                          "iab": {
+                            "all": true
+                          }
+                      }
                     }
                 }
             },
@@ -59,7 +64,9 @@
             }
         }
     </script>
-    <iframe name="__tcfapiLocator" aria-hidden="true" hidden></iframe>
+    <div id="postPromptUI">
+      <button on="tap:consent.prompt()" role="button">Manage</button>
+  </div>
   </amp-consent>
   <amp-dailymotion
   data-videoid="x2m8jpp"
@@ -79,16 +86,11 @@
   >
     <div placeholder width="200" height="100"></div>
   </amp-iframe>
+  </div>
   <footer>
   <script async custom-element="amp-consent" src="https://cdn.ampproject.org/v0/amp-consent-0.1.js"></script>
   <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
   <script async custom-element="amp-dailymotion" src="https://cdn.ampproject.org/v0/amp-dailymotion-0.1.js"></script>
-  <script src="./main.js" type="module"></script>
-  <script>
-    function consentReady() {
-      console.log('ready')
-    }
-  </script>
 </footer>
 
   </body>
