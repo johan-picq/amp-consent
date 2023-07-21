@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="amp-consent-blocking" content="amp-iframe,amp-dailymotion">
+    <meta name="amp-consent-blocking" content="amp-iframe">
     <meta content="lepoint.fr" name="amp-cookie-scope">
     <title>amp-consent integration</title>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
@@ -66,27 +66,25 @@
     </script>
     <div id="postPromptUI">
       <button on="tap:consent.prompt()" role="button">Manage</button>
-  </div>
+    </div>
   </amp-consent>
-  <amp-dailymotion
+  <!-- <amp-dailymotion
   data-videoid="x2m8jpp"
   layout="responsive"
-  data-block-on-consent="_till_responded"
   data-param-dmlogger="Infopack"
   width="480"
   height="270"
   >
-  </amp-dailymotion>
+  </amp-dailymotion> -->
   <amp-iframe  
     width="200" height="100"
     sandbox="allow-scripts allow-same-origin allow-presentation"
     layout="responsive"
     data-block-on-consent="_till_responded"
-    src="https://player.local.dailymotion.com:9096/player/xq.html?video=x3rdtfy&dmLogger=Infopack&"
+    src="https://www.dailymotion.com/embed/video/k3zsBaqSJNr8uPvi1GD?logger=Infopack&"
   >
     <div placeholder width="200" height="100"></div>
   </amp-iframe>
-  </div>
   <footer>
   <script async custom-element="amp-consent" src="https://cdn.ampproject.org/v0/amp-consent-0.1.js"></script>
   <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
